@@ -15,7 +15,7 @@
 
   <script type="module">
     import { html, render } from 'lit-html';
-    import '../wce-datatable.js';
+    import '../wces-datatable.js';
 
     const header = [
       { name: 'company', displayName: 'Company' },
@@ -62,7 +62,7 @@
     ];
     render(
       html`
-        <wce-datatable .header="${header}" .data=${data}></wce-datatable>
+        <wces-datatable .header="${header}" .data=${data}></wces-datatable>
       `,
       document.querySelector('#demo')
     );
