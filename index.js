@@ -1,1 +1,1 @@
-export { WceDatatable } from './src/WceDatatable.js';
+export { WcesDatatable } from './src/WcesDatatable.js';

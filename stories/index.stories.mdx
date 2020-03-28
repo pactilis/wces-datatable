@@ -1,6 +1,6 @@
 import { Story, Preview, Meta, Props, action, withKnobs, withWebComponentsKnobs } from '@open-wc/demoing-storybook';
 import { html } from 'lit-html';
-import '../wce-datatable.js';
+import '../wces-datatable.js';
 
 export const header = [
       { name: 'company', displayName: 'Company' },
@@ -51,7 +51,7 @@ export const data = [
   decorators={[withKnobs, withWebComponentsKnobs]}
   parameters={
     {
-      component: 'wce-datatable',
+      component: 'wces-datatable',
       options: { selectedPanel: 'storybookjs/knobs/panel' }
     }
   }
@@ -71,16 +71,16 @@ A reusable web component datatable following material design.
 ### Installation
 
 ```bash
-yarn add @wce/datatable
+yarn add @wces/datatable
 ```
 
 ```js
-import '@wce/datatable/wce-datatable.js';
+import '@wces/datatable/wces-datatable.js';
 ```
 You can also import Component class and register it yourself.
 
 ```js
-import { WceDatatable } from '@wce/datatable'
+import { WcesDatatable } from '@wces/datatable'
 
 customElements.define('your-tag', WceDatatable);
 ```
@@ -93,7 +93,7 @@ Table data properties have to match header's names.
 
 ```js
 import { html, render } from "lit-html";
-import '@wce/datatable/wce-datatable.js';
+import '@wces/datatable/wces-datatable.js';
 
 const header = [
       { name: 'company', displayName: 'Company' },
@@ -140,7 +140,7 @@ const data = [
 ];
 
 render(
-  html`<wce-datatable .header="${header}" .data="${data}"></wce-datatable>`,
+  html`<wces-datatable .header="${header}" .data="${data}"></wces-datatable>`,
   document.querySelector('#content')
 );
 
@@ -148,7 +148,7 @@ render(
 
 <Preview withToolbar>
   <Story name="Demo" height="220px">
-    {html`<wce-datatable .header="${header}" .data="${data}"></wce-datatable>` }
+    {html`<wces-datatable .header="${header}" .data="${data}"></wces-datatable>` }
   </Story>
 </Preview>
 
@@ -191,5 +191,5 @@ const header = [
 
 ## API
 
-<Props of="wce-datatable" />
+<Props of="wces-datatable" />
 

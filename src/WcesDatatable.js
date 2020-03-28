@@ -3,9 +3,9 @@ import { classMap } from 'lit-html/directives/class-map.js';
 
 /**
  * A simple datatable following material design
- * @element wce-datatable
+ * @element wces-datatable
  */
-export class WceDatatable extends LitElement {
+export class WcesDatatable extends LitElement {
 
   static get properties() {
     return {

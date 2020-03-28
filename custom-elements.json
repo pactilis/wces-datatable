@@ -2,8 +2,8 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "wce-datatable",
-      "path": "./src/WceDatatable.js",
+      "name": "wces-datatable",
+      "path": "./src/WcesDatatable.js",
       "description": "A simple datatable following material design",
       "attributes": [
         {
