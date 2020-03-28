@@ -1,0 +1,55 @@
+import { Story, Preview, Meta, Props, html } from '@open-wc/demoing-storybook';
+
+import '../wce-datatable.js';
+
+<Meta 
+  title="WceDatatable"
+  parameters={{
+    component: "wce-datatable",
+    options: { selectedPanel: "storybookjs/knobs/panel" }
+  }}
+/>
+
+# WceDatatable
+
+A component for...
+
+## Features:
+
+- a
+- b
+- ...
+
+## How to use
+
+### Installation
+
+```bash
+yarn add wce-datatable
+```
+
+```js
+import 'wce-datatable/wce-datatable.js';
+```
+
+<Preview withToolbar>
+  <Story name="Simple">
+    {html`
+      <wce-datatable></wce-datatable>
+    `}
+  </Story>
+</Preview>
+
+## API
+
+<Props of="wce-datatable" />
+
+## Variations
+
+###### Custom Title
+
+<Story name="Custom Title">
+  {html`
+    <wce-datatable .title=${'Hello World'}></wce-datatable>
+  `}
+</Story>
