@@ -6,7 +6,6 @@ import { classMap } from 'lit-html/directives/class-map.js';
  * @element wces-datatable
  */
 export class WcesDatatable extends LitElement {
-
   static get properties() {
     return {
       /**
@@ -37,7 +36,7 @@ export class WcesDatatable extends LitElement {
         *,
         *::before,
         *::after {
-          padding:0;
+          padding: 0;
           margin: 0;
           box-sizing: border-box;
         }
@@ -87,7 +86,8 @@ export class WcesDatatable extends LitElement {
     return html`
       <div class="container">
         <table class="table">
-          ${this._renderHeader()} ${this._renderRows()}
+          ${this.header && this.header.length ? this._renderHeader() : html``}
+          ${this.data && this.data.length ? this._renderRows() : html``}
         </table>
       </div>
     `;
@@ -135,7 +135,6 @@ export class WcesDatatable extends LitElement {
       })}
     `;
   }
-
 }
 
 /**
