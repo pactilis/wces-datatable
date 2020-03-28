@@ -4,16 +4,23 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ## Installation
 ```bash
-npm i wce-datatable
+npm i @wce/datatable
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import 'wce-datatable/wce-datatable.js';
+  import '@wce/datatable/wce-datatable.js';
+  
+  const header = ...
+  const data = ...
+
+  table.header = header;
+  table.data = data;
+
 </script>
 
-<wce-datatable></wce-datatable>
+<wce-datatable id="table"></wce-datatable>
 ```
 
 ## Linting with ESLint, Prettier, and Types

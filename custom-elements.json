@@ -1,30 +1,36 @@
 {
-  "version": 2,
+  "version": "experimental",
   "tags": [
     {
       "name": "wce-datatable",
-      "description": "A component with a title and an action counter",
-      "properties": [
+      "path": "./src/WceDatatable.js",
+      "description": "A simple datatable following material design",
+      "attributes": [
         {
-          "name": "title",
-          "type": "String",
-          "description": "The title of your component",
-          "default": "Hey there"
+          "name": "header",
+          "description": "Table header definition",
+          "type": "array<object>",
+          "default": "[]"
         },
         {
-          "name": "counter",
-          "type": "Number",
-          "description": "An action counter",
-          "default": 0
+          "name": "data",
+          "description": "Table data",
+          "type": "array<object>"
         }
       ],
-      "events": [],
-      "slots": [],
-      "cssProperties": [
+      "properties": [
         {
-          "name": "--wce-datatable-text-color",
-          "description": "Main Text Color",
-          "type": "Color"
+          "name": "header",
+          "attribute": "header",
+          "description": "Table header definition",
+          "type": "array<object>",
+          "default": "[]"
+        },
+        {
+          "name": "data",
+          "attribute": "data",
+          "description": "Table data",
+          "type": "array<object>"
         }
       ]
     }

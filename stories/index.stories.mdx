@@ -1,55 +1,195 @@
-import { Story, Preview, Meta, Props, html } from '@open-wc/demoing-storybook';
-
+import { Story, Preview, Meta, Props, action, withKnobs, withWebComponentsKnobs } from '@open-wc/demoing-storybook';
+import { html } from 'lit-html';
 import '../wce-datatable.js';
 
-<Meta 
-  title="WceDatatable"
-  parameters={{
-    component: "wce-datatable",
-    options: { selectedPanel: "storybookjs/knobs/panel" }
-  }}
+export const header = [
+      { name: 'company', displayName: 'Company' },
+      { name: 'contact', displayName: 'Contact' },
+      { name: 'country', displayName: 'Country' },
+      {
+        name: 'population',
+        displayName: 'Population',
+        isNumeric: true,
+        renderer: (row, litHtmlTag) => {
+          const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
+          return litHtmlTag`${formatter.format(row.population)}`
+        }
+      },
+      {
+        name: '',
+        renderer: (row, litHtmlTag) => {
+          return litHtmlTag`<input type="checkbox" id="${row.id}" name="${row.id}" value="${row.id}">`
+        }
+      }
+  ];
+export const data = [
+  {
+    id: 1,
+    company: 'Alfreds Futterkiste',
+    contact: 'Maria Anders',
+    country: 'Germany',
+    population: 30000,
+  },
+  {
+    id: 2,
+    company: 'Berglunds snabbköp',
+    contact: 'Christina Berglund',
+    country: 'Sweden',
+    population: 3000,
+  },
+  {
+    id: 3,
+    company: 'Centro comercial Moctezuma',
+    contact: 'Francisco Chang',
+    country: 'Mexico',
+    population: 6000000,
+  },
+]
+
+<Meta
+  title="Datatable"
+  decorators={[withKnobs, withWebComponentsKnobs]}
+  parameters={
+    {
+      component: 'wce-datatable',
+      options: { selectedPanel: 'storybookjs/knobs/panel' }
+    }
+  }
 />
 
-# WceDatatable
+# Datatable
 
-A component for...
+A reusable web component datatable following material design.
 
-## Features:
+## Features
 
-- a
-- b
-- ...
+- Supports custom renderer function
+- Right-aligns numeric data
 
 ## How to use
 
 ### Installation
 
 ```bash
-yarn add wce-datatable
+yarn add @wce/datatable
 ```
 
 ```js
-import 'wce-datatable/wce-datatable.js';
+import '@wce/datatable/wce-datatable.js';
+```
+You can also import Component class and register it yourself.
+
+```js
+import { WceDatatable } from '@wce/datatable'
+
+customElements.define('your-tag', WceDatatable);
+```
+
+### Usage
+
+#### Example usage
+
+Table data properties have to match header's names.
+
+```js
+import { html, render } from "lit-html";
+import '@wce/datatable/wce-datatable.js';
+
+const header = [
+      { name: 'company', displayName: 'Company' },
+      { name: 'contact', displayName: 'Contact' },
+      { name: 'country', displayName: 'Country' },
+      {
+        name: 'population',
+        displayName: 'Population',
+        isNumeric: true,
+        renderer: (row, litHtmlTag) => {
+          const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
+          return litHtmlTag`${formatter.format(row.population)}`
+        }
+      },
+      {
+        name: '',
+        renderer: (row, litHtmlTag) => {
+          return litHtmlTag`<input type="checkbox" id="${row.id}" name="${row.id}" value="${row.id}">`
+        }
+      }
+  ];
+const data = [
+  {
+    id: 1,
+    company: 'Alfreds Futterkiste',
+    contact: 'Maria Anders',
+    country: 'Germany',
+    population: 30000,
+  },
+  {
+    id: 2,
+    company: 'Berglunds snabbköp',
+    contact: 'Christina Berglund',
+    country: 'Sweden',
+    population: 3000,
+  },
+  {
+    id: 3,
+    company: 'Centro comercial Moctezuma',
+    contact: 'Francisco Chang',
+    country: 'Mexico',
+    population: 6000000,
+  },
+];
+
+render(
+  html`<wce-datatable .header="${header}" .data="${data}"></wce-datatable>`,
+  document.querySelector('#content')
+);
+
 ```
 
 <Preview withToolbar>
-  <Story name="Simple">
-    {html`
-      <wce-datatable></wce-datatable>
-    `}
+  <Story name="Demo" height="220px">
+    {html`<wce-datatable .header="${header}" .data="${data}"></wce-datatable>` }
   </Story>
 </Preview>
+
+#### Custom renderer
+
+Custom renderer is a function that took two arguments:
+- `row`: The current row object
+- `litHtmlTag`: `lit-html` tag function
+It must return a tag html template. For example, to format a numeric column one can do:
+
+```js
+const header = [
+  ...,
+  {
+    name: 'population',
+    displayName: 'Population',
+    isNumeric: true,
+    renderer: (row, litHtmlTag) => {
+      const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
+      return litHtmlTag`${formatter.format(row.population)}`
+    }
+  }
+]
+```
+
+`Custom renderer` can be used to render complexe ui controls. For example one can add a columns with checkboxes.
+
+```js
+const header = [
+  ...,
+  {
+    name: '',
+    renderer: (row, litHtmlTag) => {
+      return litHtmlTag`<input type="checkbox" id="${row.id}" name="${row.id}" value="${row.id}">`
+    }
+  }
+]
+```
+
 
 ## API
 
 <Props of="wce-datatable" />
 
-## Variations
-
-###### Custom Title
-
-<Story name="Custom Title">
-  {html`
-    <wce-datatable .title=${'Hello World'}></wce-datatable>
-  `}
-</Story>
