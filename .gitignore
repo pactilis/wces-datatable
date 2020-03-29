@@ -20,3 +20,4 @@
 /dist/
 
 /storybook-static/
+.env
