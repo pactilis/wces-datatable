@@ -1,0 +1,38 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "wces-datatable",
+      "path": "./src/WcesDatatable.js",
+      "description": "A simple datatable following material design",
+      "attributes": [
+        {
+          "name": "header",
+          "description": "Table header definition",
+          "type": "array<object>",
+          "default": "[]"
+        },
+        {
+          "name": "data",
+          "description": "Table data",
+          "type": "array<object>"
+        }
+      ],
+      "properties": [
+        {
+          "name": "header",
+          "attribute": "header",
+          "description": "Table header definition",
+          "type": "array<object>",
+          "default": "[]"
+        },
+        {
+          "name": "data",
+          "attribute": "data",
+          "description": "Table data",
+          "type": "array<object>"
+        }
+      ]
+    }
+  ]
+}
