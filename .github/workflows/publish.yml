@@ -28,9 +28,8 @@ jobs:
         yarn storybook:build
 
     - name: Publish documentation
-      run: |
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: storybook-static # The folder the action should deploy.
+      uses: JamesIves/github-pages-deploy-action@3.4.2
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: storybook-static # The folder the action should deploy.
