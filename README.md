@@ -4,13 +4,13 @@ This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) reco
 
 ## Installation
 ```bash
-npm i @wce/datatable
+npm i @wces/datatable
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import '@wce/datatable/wce-datatable.js';
+  import '@wces/datatable/wces-datatable.js';
   
   const header = ...
   const data = ...
@@ -20,7 +20,7 @@ npm i @wce/datatable
 
 </script>
 
-<wce-datatable id="table"></wce-datatable>
+<wces-datatable id="table"></wces-datatable>
 ```
 
 ## Linting with ESLint, Prettier, and Types
