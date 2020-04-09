@@ -27,27 +27,27 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "iframe.html",
-    "revision": "dc97e3520b0b670c0377f3e451243c1f"
+    "revision": "fd6daa367a370025f01e181445cd04ff"
   },
   {
     "url": "index.html",
-    "revision": "22093a95cfe3140fe786392d467877d6"
+    "revision": "119436b4fec648bda6319ee74909bdae"
+  },
+  {
+    "url": "inline-entry.0-6835e768.js",
+    "revision": "f6d663e73c79a903204311948aa43b2d"
   },
   {
     "url": "inline-entry.0-73eedab9.js",
     "revision": "90a64e3eab38a019c8669513dc1fb57b"
   },
   {
-    "url": "inline-entry.0-97b9c8e7.js",
-    "revision": "384027e5584643e2804b08372a5f366d"
+    "url": "legacy/inline-entry.0-0733f1b0.js",
+    "revision": "c1d9def8ddd946c1a231e33c5a2b0a24"
   },
   {
     "url": "legacy/inline-entry.0-7fb3b0e2.js",
     "revision": "17def4feacf605bdfac4e0d107d1f742"
-  },
-  {
-    "url": "legacy/inline-entry.0-a8c47c4f.js",
-    "revision": "95d6294e6ccd5dbcb1257493a1264799"
   },
   {
     "url": "legacy/lit-html-d467101e.js",
@@ -74,8 +74,8 @@ self.__precacheManifest = [
     "revision": "cff507bc95ad1d6bf1a415cc9c8852b0"
   },
   {
-    "url": "polyfills/dynamic-import.b745cfc9384367cc18b42bbef2bbdcd9.js",
-    "revision": "ed55766050be285197b8f511eacedb62"
+    "url": "polyfills/dynamic-import.991be47e17117abb5eb15f5254ad3869.js",
+    "revision": "08b86a7f56c6f0d65265654299b16d74"
   },
   {
     "url": "polyfills/fetch.191258a74d74243758f52065f3d0962a.js",
