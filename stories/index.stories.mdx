@@ -5,7 +5,7 @@ import '../wces-datatable.js';
 export const header = [
       { name: 'company', displayName: 'Company' },
       { name: 'contact', displayName: 'Contact' },
-      { name: 'country', displayName: 'Country' },
+      { name: 'country.name', displayName: 'Country' },
       {
         name: 'population',
         displayName: 'Population',
@@ -27,21 +27,21 @@ export const data = [
     id: 1,
     company: 'Alfreds Futterkiste',
     contact: 'Maria Anders',
-    country: 'Germany',
+    country: { name: 'Germany'},
     population: 30000,
   },
   {
     id: 2,
     company: 'Berglunds snabbköp',
     contact: 'Christina Berglund',
-    country: 'Sweden',
+    country: { name: 'Sweden'},
     population: 3000,
   },
   {
     id: 3,
     company: 'Centro comercial Moctezuma',
     contact: 'Francisco Chang',
-    country: 'Mexico',
+    country: { name: 'Mexico'},
     population: 6000000,
   },
 ]
@@ -98,7 +98,7 @@ import '@wces/datatable/wces-datatable.js';
 const header = [
       { name: 'company', displayName: 'Company' },
       { name: 'contact', displayName: 'Contact' },
-      { name: 'country', displayName: 'Country' },
+      { name: 'country.name', displayName: 'Country' },
       {
         name: 'population',
         displayName: 'Population',
@@ -120,21 +120,21 @@ const data = [
     id: 1,
     company: 'Alfreds Futterkiste',
     contact: 'Maria Anders',
-    country: 'Germany',
+    country: { name: 'Germany'},
     population: 30000,
   },
   {
     id: 2,
     company: 'Berglunds snabbköp',
     contact: 'Christina Berglund',
-    country: 'Sweden',
+    country: { name: 'Sweden'},
     population: 3000,
   },
   {
     id: 3,
     company: 'Centro comercial Moctezuma',
     contact: 'Francisco Chang',
-    country: 'Mexico',
+    country: { name: 'Mexico'},
     population: 6000000,
   },
 ];

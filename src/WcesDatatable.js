@@ -1,5 +1,6 @@
 import { html, css, LitElement } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map.js';
+import getProperty from './get-property.js';
 
 /**
  * A simple datatable following material design
@@ -128,7 +129,7 @@ export class WcesDatatable extends LitElement {
           table__cell: true,
           'table__cell--numeric': isNumeric,
         };
-        const template = renderer ? renderer(rowData, html) : rowData[name];
+        const template = renderer ? renderer(rowData, html) : getProperty(name, rowData);
         return html`
           <td class=${classMap(classes)}>${template}</td>
         `;
