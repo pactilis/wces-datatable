@@ -19,6 +19,16 @@ export class WcesDatatable extends LitElement {
        * @type {array<object>}
        */
       data: { type: Array }, // [{h1, h2,...}] where hi are headers' names
+
+      /**
+       * Hide table header if true
+       */
+      hideHeader: { type: Boolean },
+
+      /**
+       * condenses the table if true
+       */
+      condensed: { type: Boolean },
     };
   }
 
@@ -29,6 +39,9 @@ export class WcesDatatable extends LitElement {
 
     /** @type {Array<any>} */
     this.data = null;
+
+    this.hideHeader = false;
+    this.condensed = false;
   }
 
   static get styles() {
@@ -67,6 +80,11 @@ export class WcesDatatable extends LitElement {
         .table__row .table__cell {
           height: 3.25rem;
         }
+        .table[condensed] .table__header,
+        .table[condensed] .table__row .table__cell {
+          height: 1.625rem;
+        }
+
         .table__cell {
           padding: 0 1rem;
           text-align: left;
@@ -86,8 +104,8 @@ export class WcesDatatable extends LitElement {
   render() {
     return html`
       <div class="container">
-        <table class="table">
-          ${this.header && this.header.length ? this._renderHeader() : html``}
+        <table class="table" ?condensed="${this.condensed}">
+          ${!this.hideHeader && this.header && this.header.length ? this._renderHeader() : html``}
           ${this.data && this.data.length ? this._renderRows() : html``}
         </table>
       </div>

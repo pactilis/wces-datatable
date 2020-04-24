@@ -1,72 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
-
-<head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
-</head>
-
-<body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit-html';
-    import '../wces-datatable.js';
-
-    const header = [
-      { name: 'company', displayName: 'Company' },
-      { name: 'contact', displayName: 'Contact' },
-      { name: 'country', displayName: 'Country' },
-      {
-        name: 'population',
-        displayName: 'Population',
-        isNumeric: true,
-        renderer: (row, litHtmlTag) => {
-          const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
-          return litHtmlTag`${formatter.format(row.population)}`
-        }
-      },
-      {
-        name: '',
-        renderer: (row, litHtmlTag) => {
-          return litHtmlTag`<input type="checkbox" id="${row.id}" name="${row.id}" value="${row.id}">`
-        }
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #fafafa;
       }
-    ];
-    const data = [
-      {
-        id: 1,
-        company: 'Alfreds Futterkiste',
-        contact: 'Maria Anders',
-        country: 'Germany',
-        population: 30000,
-      },
-      {
-        id: 2,
-        company: 'Berglunds snabbköp',
-        contact: 'Christina Berglund',
-        country: 'Sweden',
-        population: 3000,
-      },
-      {
-        id: 3,
-        company: 'Centro comercial Moctezuma',
-        contact: 'Francisco Chang',
-        country: 'Mexico',
-        population: 6000000,
-      },
-    ];
-    render(
-      html`
-        <wces-datatable .header="${header}" .data=${data}></wces-datatable>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+    </style>
+  </head>
 
+  <body>
+    <div id="demo"></div>
+
+    <script type="module">
+      import { html, render } from 'lit-html';
+      import '../wces-datatable.js';
+
+      const header = [
+        { name: 'company', displayName: 'Company' },
+        { name: 'contact', displayName: 'Contact' },
+        { name: 'country', displayName: 'Country' },
+        {
+          name: 'population',
+          displayName: 'Population',
+          isNumeric: true,
+          renderer: (row, litHtmlTag) => {
+            const formatter = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 });
+            return litHtmlTag`${formatter.format(row.population)}`;
+          },
+        },
+        {
+          name: '',
+          renderer: (row, litHtmlTag) =>
+            litHtmlTag`<input type="checkbox" id="${row.id}" name="${row.id}" value="${row.id}">`,
+        },
+      ];
+      const data = [
+        {
+          id: 1,
+          company: 'Alfreds Futterkiste',
+          contact: 'Maria Anders',
+          country: 'Germany',
+          population: 30000,
+        },
+        {
+          id: 2,
+          company: 'Berglunds snabbköp',
+          contact: 'Christina Berglund',
+          country: 'Sweden',
+          population: 3000,
+        },
+        {
+          id: 3,
+          company: 'Centro comercial Moctezuma',
+          contact: 'Francisco Chang',
+          country: 'Mexico',
+          population: 6000000,
+        },
+      ];
+      render(
+        html`
+          <wces-datatable .header="${header}" .data=${data}></wces-datatable>
+        `,
+        document.querySelector('#demo'),
+      );
+    </script>
+  </body>
 </html>
