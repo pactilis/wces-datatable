@@ -16,6 +16,18 @@
           "name": "data",
           "description": "Table data",
           "type": "array<object>"
+        },
+        {
+          "name": "hideHeader",
+          "description": "Hide table header if true",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "condensed",
+          "description": "condenses the table if true",
+          "type": "boolean",
+          "default": "false"
         }
       ],
       "properties": [
@@ -31,6 +43,20 @@
           "attribute": "data",
           "description": "Table data",
           "type": "array<object>"
+        },
+        {
+          "name": "hideHeader",
+          "attribute": "hideHeader",
+          "description": "Hide table header if true",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "condensed",
+          "attribute": "condensed",
+          "description": "condenses the table if true",
+          "type": "boolean",
+          "default": "false"
         }
       ]
     }
